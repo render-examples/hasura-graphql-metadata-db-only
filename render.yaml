@@ -5,9 +5,9 @@ services:
   autoDeploy: false
   healthCheckPath: /healthz
   envVars:
-  - key: HASURA_GRAPHQL_DATABASE_URL
+  - key: HASURA_GRAPHQL_METADATA_DATABASE_URL
     fromDatabase:
-      name: hasura
+      name: hasura-metadata
       property: connectionString
   - key: HASURA_GRAPHQL_ENABLE_CONSOLE
     value: true
@@ -19,4 +19,4 @@ services:
 #  - key: HASURA_GRAPHQL_ADMIN_SECRET
 #    generateValue: true
 databases:
-- name: hasura
+- name: hasura-metadata
